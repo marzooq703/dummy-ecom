@@ -1,10 +1,9 @@
-import logo from "./logo.svg";
 import "./App.css";
-
+import { MiniDrawer } from "./Drawer.js";
 function App() {
   return (
     <div className="App">
-      <header className="App-header"></header>
+      <MiniDrawer></MiniDrawer>
     </div>
   );
 }
