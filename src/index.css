@@ -25,6 +25,7 @@ body {
 #navbar {
   background-color: #fff !important;
   font-size: 16px;
+  font-family: poppins;
   display: flex;
   align-items: center;
   padding-top: 10px;
@@ -103,11 +104,6 @@ body {
   line-height: 70px;
 }
 
-#bgimg {
-  width: 45% !important;
-  margin-left: auto;
-}
-
 .bttn {
   display: flex;
   align-items: center;
@@ -134,7 +130,54 @@ body {
   color: #fff;
 }
 
+.hero-t3 {
+  position: absolute;
+  top: 28%;
+  left: 60%;
+  font-size: 50px;
+  font-weight: 600;
+  font-family: Poppins;
+  width: 250px;
+  color: #000;
+}
+
+#bgimg {
+  width: 45% !important;
+  margin-left: auto;
+}
+
 @media screen and (max-width: 768px) {
+  .logo {
+    margin-left: 20px;
+  }
+
+  .home {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #bgimg {
+    width: 75% !important;
+    position: relative;
+    top: 15%;
+    margin-right: auto;
+  }
+
+  .hero {
+    position: relative;
+    margin-right: auto;
+    top: 25%;
+  }
+
+  .hero-t3 {
+    font-size: 30px;
+    width: 150px;
+    top: 20%;
+    left: 20%;
+  }
+
   .cart-nav {
     display: flex;
     position: relative;
