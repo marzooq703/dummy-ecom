@@ -163,21 +163,21 @@ body {
   #bgimg {
     width: 75% !important;
     position: relative;
-    top: 25%;
+    top: -8%;
     margin-right: auto;
   }
 
   .hero {
     left: 0;
     margin-right: auto;
-    top: 20%;
+    top: -10%;
   }
 
   .hero-t3 {
     position: relative;
-    font-size: 25px;
-    width: 250px;
-    top: -15%;
+    font-size: 20px;
+    width: 200px;
+    top: -26%;
     left: -7%;
   }
 
@@ -185,5 +185,9 @@ body {
     display: flex;
     position: relative;
     left: 60px;
+  }
+
+  .navbar-toggler {
+    box-shadow: none !important;
   }
 }
