@@ -89,6 +89,8 @@ body {
   justify-content: center;
   padding: 50px;
   color: #000;
+  position: relative;
+  left: 4.5%;
 }
 
 .hero-t1 {
@@ -131,13 +133,13 @@ body {
 }
 
 .hero-t3 {
-  position: absolute;
-  top: 28%;
-  left: 60%;
-  font-size: 50px;
+  position: relative;
+  top: -15%;
+  left: 29%;
+  font-size: 45px;
   font-weight: 600;
   font-family: Poppins;
-  width: 250px;
+  width: 350px;
   color: #000;
 }
 
@@ -161,21 +163,22 @@ body {
   #bgimg {
     width: 75% !important;
     position: relative;
-    top: 15%;
+    top: 25%;
     margin-right: auto;
   }
 
   .hero {
-    position: relative;
+    left: 0;
     margin-right: auto;
-    top: 25%;
+    top: 20%;
   }
 
   .hero-t3 {
-    font-size: 30px;
-    width: 150px;
-    top: 20%;
-    left: 20%;
+    position: relative;
+    font-size: 25px;
+    width: 250px;
+    top: -15%;
+    left: -7%;
   }
 
   .cart-nav {

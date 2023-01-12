@@ -14,7 +14,7 @@ const Home = () => {
             </Link>
           </div>
         </div>
-        <p className="hero-t3">One Stop Store...</p>
+        <p className="hero-t3">The One Spot Store...</p>
         <img src={bgimg} id="bgimg" />
       </section>
     </>
