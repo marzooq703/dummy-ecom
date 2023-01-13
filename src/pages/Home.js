@@ -15,7 +15,7 @@ const Home = () => {
           </div>
         </div>
         <p className="hero-t3">The One Spot Store...</p>
-        <img src={bgimg} id="bgimg" />
+        <img src={bgimg} id="bgimg" alt="vector" />
       </section>
     </>
   );
