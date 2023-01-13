@@ -81,7 +81,7 @@ body {
 
 .hero {
   margin-left: auto;
-  width: 400px;
+  width: 500px;
   height: 500px;
   background-color: #cae9ff;
   display: flex;
@@ -89,6 +89,8 @@ body {
   justify-content: center;
   padding: 50px;
   color: #000;
+  position: relative;
+  left: 7.5%;
 }
 
 .hero-t1 {
@@ -120,7 +122,8 @@ body {
   text-decoration: none;
 }
 
-.bttn:hover {
+.bttn:hover,
+.submit:hover {
   background-color: #006d77;
   transition: 0.2s ease;
   color: #000;
@@ -131,19 +134,69 @@ body {
 }
 
 .hero-t3 {
-  position: absolute;
-  top: 28%;
-  left: 60%;
-  font-size: 50px;
+  position: relative;
+  top: -15%;
+  left: 26%;
+  font-size: 45px;
   font-weight: 600;
   font-family: Poppins;
-  width: 250px;
+  width: 350px;
   color: #000;
 }
 
 #bgimg {
   width: 45% !important;
   margin-left: auto;
+}
+
+.tabs {
+  width: 100% !important;
+  height: 100% !important;
+  font-size: 50px !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: 25px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin-top: 20px;
+  gap: 30px;
+  width: 400px;
+  height: 450px;
+  background-color: #cae9ff;
+  padding: 80px;
+  border-radius: 20px;
+  box-shadow: 0px 5px 20px 0px rgb(131, 197, 190);
+}
+
+.submit {
+  padding: 8px 5px;
+  width: 120px;
+  color: #fff;
+  border: none;
+  font-size: 16px;
+  font-family: poppins;
+  background-color: #000;
+}
+
+#label {
+  font-size: 14px;
+  line-height: 0;
+  margin: 0;
+}
+
+.red {
+  color: red !important;
+}
+
+.login {
+  height: 300px;
 }
 
 @media screen and (max-width: 768px) {
@@ -161,26 +214,31 @@ body {
   #bgimg {
     width: 75% !important;
     position: relative;
-    top: 15%;
+    top: 25%;
     margin-right: auto;
   }
 
   .hero {
-    position: relative;
+    left: 0;
     margin-right: auto;
-    top: 25%;
+    top: 20%;
   }
 
   .hero-t3 {
-    font-size: 30px;
-    width: 150px;
-    top: 20%;
-    left: 20%;
+    position: relative;
+    font-size: 25px;
+    width: 250px;
+    top: -15%;
+    left: -7%;
   }
 
   .cart-nav {
     display: flex;
     position: relative;
     left: 60px;
+  }
+
+  .navbar-toggler {
+    box-shadow: none !important;
   }
 }
