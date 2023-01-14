@@ -78,27 +78,33 @@ export default function BasicTabs() {
   );
 }
 const Test = () => {
-  let a = document.querySelector("#email").value;
-  let b = document.querySelector("#pass").value;
-  let c = document.querySelector("#confirm-pass").value;
-  let d = document.querySelector("#name").value;
+  let a = document.querySelector("#name").value;
+  let b = document.querySelector("#email").value;
+  let c = document.querySelector("#pass").value;
+  let d = document.querySelector("#confirm-pass").value;
+
+  var validRegex =
+    /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
   if (a == null || a == "") {
-    document.getElementById("label").textContent = "*Email Must Be Filled Out";
+    document.getElementById("label").textContent = "*Name Must Be Filled Out";
     return false;
   } else if (b == null || b == "") {
-    document.getElementById("label").textContent =
-      "*Password Must Be Filled Out";
+    document.getElementById("label").textContent = "*Email Must Be Filled Out";
+    return false;
+  } else if (!b.match(validRegex)) {
+    document.getElementById("label").textContent = "*Invalid Email";
     return false;
   } else if (c == null || c == "") {
     document.getElementById("label").textContent =
       "*Password Must Be Filled Out";
     return false;
-  } else if (b != c) {
-    document.getElementById("label").textContent = "*Passwords Does Not Match";
-    return false;
   } else if (d == null || d == "") {
-    document.getElementById("label").textContent = "*Name Must Be Filled Out";
+    document.getElementById("label").textContent =
+      "*Password Must Be Filled Out";
+    return false;
+  } else if (c != d) {
+    document.getElementById("label").textContent = "*Passwords Does Not Match";
     return false;
   } else if (a > 5) {
     alert("hello");
