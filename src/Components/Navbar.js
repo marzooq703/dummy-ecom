@@ -4,7 +4,7 @@ import Navbar from "react-bootstrap/Navbar";
 import { NavLink } from "react-router-dom";
 import "../index.css";
 
-function BasicExample() {
+function NavBarr() {
   return (
     <Navbar bg="dark" expand="lg" id="navbar">
       <Container>
@@ -37,6 +37,9 @@ function BasicExample() {
             <NavLink to="/form" className="link">
               Register/Login
             </NavLink>
+            <NavLink to="/adminform" className="link">
+              Admin Login
+            </NavLink>
           </Nav>
         </Navbar.Collapse>
       </Container>
@@ -44,4 +47,4 @@ function BasicExample() {
   );
 }
 
-export default BasicExample;
+export default NavBarr;
