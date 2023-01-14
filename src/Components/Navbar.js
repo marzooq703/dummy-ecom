@@ -26,15 +26,15 @@ function NavBarr() {
           </span>
         </NavLink>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
+        <Navbar.Collapse id="basic-navbar-nav" className="hide">
           <Nav className="me-auto">
-            <NavLink to="/" className="link">
+            <NavLink to="/" className="link ">
               Home
             </NavLink>
-            <NavLink to="/products" className="link">
+            <NavLink to="/products" className="link ">
               Products
             </NavLink>
-            <NavLink to="/form" className="link">
+            <NavLink to="/form" className="link ">
               Register/Login
             </NavLink>
             <NavLink to="/adminform" className="link">

@@ -3,6 +3,7 @@ import FormControl from "@mui/material/FormControl";
 import Input from "@mui/material/Input";
 import FormHelperText from "@mui/material/FormHelperText";
 import InputLabel from "@mui/material/InputLabel";
+import Admin from "./Admin";
 
 const Login = () => {
   return (
@@ -32,6 +33,13 @@ const Test = () => {
     document.getElementById("label").textContent =
       "*Password Must Be Filled Out";
     return false;
+  }
+
+  const c = "zee";
+  const d = "1234";
+
+  if (a == c && b == d) {
+    alert("hello");
   }
 };
 
