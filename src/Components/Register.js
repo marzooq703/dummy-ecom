@@ -3,7 +3,6 @@ import FormControl from "@mui/material/FormControl";
 import Input from "@mui/material/Input";
 import FormHelperText from "@mui/material/FormHelperText";
 import InputLabel from "@mui/material/InputLabel";
-import { valueToPercent } from "@mui/base";
 
 const Register = () => {
   return (
