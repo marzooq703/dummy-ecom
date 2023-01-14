@@ -60,7 +60,16 @@ export default function BasicTabs() {
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
-        <Register />
+        <Register
+          field1="Enter Name"
+          field2="Email Address"
+          field3="Enter new Password"
+          field4="Confirm password"
+          field3Type="password"
+          field4Type="password"
+          BtnText="Submit"
+          BtnClick={Test}
+        />
       </TabPanel>
       <TabPanel value={value} index={1}>
         <Login />
@@ -68,3 +77,35 @@ export default function BasicTabs() {
     </Box>
   );
 }
+const Test = () => {
+  let a = document.querySelector("#email").value;
+  let b = document.querySelector("#pass").value;
+  let c = document.querySelector("#confirm-pass").value;
+  let d = document.querySelector("#name").value;
+
+  if (a == null || a == "") {
+    document.getElementById("label").textContent = "*Email Must Be Filled Out";
+    return false;
+  } else if (b == null || b == "") {
+    document.getElementById("label").textContent =
+      "*Password Must Be Filled Out";
+    return false;
+  } else if (c == null || c == "") {
+    document.getElementById("label").textContent =
+      "*Password Must Be Filled Out";
+    return false;
+  } else if (b != c) {
+    document.getElementById("label").textContent = "*Passwords Does Not Match";
+    return false;
+  } else if (d == null || d == "") {
+    document.getElementById("label").textContent = "*Name Must Be Filled Out";
+    return false;
+  } else if (a > 5) {
+    alert("hello");
+  } else {
+    let e = document.getElementById("label");
+    e.textContent = "Successfully Registered";
+    e.classList.remove("red");
+    e.style.color = "green";
+  }
+};
