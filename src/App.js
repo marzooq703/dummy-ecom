@@ -7,7 +7,8 @@ import Error from "./pages/Error";
 import SharedLayout from "./pages/SharedLayout";
 import Form from "./pages/Form";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Admin from "../src/Components/Admin";
+
+import AdminForm from "./Components/Admin";
 
 function App() {
   return (
@@ -18,7 +19,8 @@ function App() {
           <Route path="products" element={<Products />} />
           <Route path="cart" element={<Cart />} />
           <Route path="form" element={<Form />} />
-          <Route path="1253" element={<Admin />} />
+
+          <Route path="adminform" element={<AdminForm />} />
         </Route>
         <Route path="*" element={<Error />} />
       </Routes>
