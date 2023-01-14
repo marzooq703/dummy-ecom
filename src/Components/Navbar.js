@@ -26,15 +26,15 @@ function BasicExample() {
           </span>
         </NavLink>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
+        <Navbar.Collapse id="basic-navbar-nav" className="hide">
           <Nav className="me-auto">
-            <NavLink to="/" className="link">
+            <NavLink to="/" className="link ">
               Home
             </NavLink>
-            <NavLink to="/products" className="link">
+            <NavLink to="/products" className="link ">
               Products
             </NavLink>
-            <NavLink to="/form" className="link">
+            <NavLink to="/form" className="link ">
               Register/Login
             </NavLink>
           </Nav>
@@ -43,5 +43,16 @@ function BasicExample() {
     </Navbar>
   );
 }
+
+// document.ready(function () {
+//   ".link".click(function () {
+//     ".navbar Navbar.Collapse".
+//   });
+// });
+
+// function Hide() {
+//   const b = document.querySelector(".hide");
+//   b.removeClass("show");
+// }
 
 export default BasicExample;

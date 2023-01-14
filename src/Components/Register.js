@@ -3,6 +3,7 @@ import FormControl from "@mui/material/FormControl";
 import Input from "@mui/material/Input";
 import FormHelperText from "@mui/material/FormHelperText";
 import InputLabel from "@mui/material/InputLabel";
+import { valueToPercent } from "@mui/base";
 
 const Register = () => {
   return (
@@ -34,35 +35,48 @@ const Register = () => {
 };
 
 const Test = () => {
-  let a = document.querySelector("#email").value;
-  let b = document.querySelector("#pass").value;
-  let c = document.querySelector("#confirm-pass").value;
-  let d = document.querySelector("#name").value;
+  let a = document.querySelector("#name").value;
+  let b = document.querySelector("#email").value;
+  let c = document.querySelector("#pass").value;
+  let d = document.querySelector("#confirm-pass").value;
+
+  var validRegex =
+    /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
   if (a == null || a == "") {
-    document.getElementById("label").textContent = "*Email Must Be Filled Out";
+    document.getElementById("label").textContent = "*Name Must Be Filled Out";
     return false;
   } else if (b == null || b == "") {
-    document.getElementById("label").textContent =
-      "*Password Must Be Filled Out";
+    document.getElementById("label").textContent = "*Email Must Be Filled Out";
+    return false;
+  } else if (!b.match(validRegex)) {
+    document.getElementById("label").textContent = "*Error";
     return false;
   } else if (c == null || c == "") {
     document.getElementById("label").textContent =
       "*Password Must Be Filled Out";
     return false;
-  } else if (b != c) {
+  } else if (d == null || d == "") {
+    document.getElementById("label").textContent =
+      "*Password Must Be Filled Out";
+    return false;
+  } else if (c != d) {
     document.getElementById("label").textContent = "*Passwords Does Not Match";
     return false;
-  } else if (d == null || d == "") {
-    document.getElementById("label").textContent = "*Name Must Be Filled Out";
-    return false;
-  } else if (a > 5) {
-    alert("hello");
   } else {
     let e = document.getElementById("label");
     e.textContent = "Successfully Registered";
     e.classList.remove("red");
     e.style.color = "green";
+  }
+};
+
+const emailValidation = () => {
+  let b = document.querySelector("#email").value;
+
+  if (Object.prototype.toString.call(b) === "[object String]") {
+    document.getElementById("label").textContent = "*InValid Email Address";
+    return false;
   }
 };
 
