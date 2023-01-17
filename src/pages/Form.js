@@ -6,6 +6,7 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Register from "../Components/Register";
 import Login from "../Components/Login";
+import RegisterForm from "../Components/RegisterForm";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -55,63 +56,17 @@ export default function BasicTabs() {
           onChange={handleChange}
           aria-label="basic tabs example"
         >
-          <Tab label="Register" {...a11yProps(0)} />
-          <Tab label="Login" {...a11yProps(1)} />
+          <Tab label="Register" {...a11yProps(0)} className="formTab" />
+          <Tab label="Login" {...a11yProps(1)} className="formTab" />
         </Tabs>
       </Box>
-      <TabPanel value={value} index={0}>
-        <Register
-          field1="Enter Name"
-          field2="Email Address"
-          field3="Enter new Password"
-          field4="Confirm password"
-          field3Type="password"
-          field4Type="password"
-          BtnText="Submit"
-          BtnClick={Test}
-        />
+      <TabPanel value={value} index={0} className="formTab">
+        <RegisterForm className="formTab" />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <Login />
+        <Login className="formTab" />
       </TabPanel>
     </Box>
   );
 }
-const Test = () => {
-  let a = document.querySelector("#name").value;
-  let b = document.querySelector("#email").value;
-  let c = document.querySelector("#pass").value;
-  let d = document.querySelector("#confirm-pass").value;
-
-  var validRegex =
-    /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-
-  if (a == null || a == "") {
-    document.getElementById("label").textContent = "*Name Must Be Filled Out";
-    return false;
-  } else if (b == null || b == "") {
-    document.getElementById("label").textContent = "*Email Must Be Filled Out";
-    return false;
-  } else if (!b.match(validRegex)) {
-    document.getElementById("label").textContent = "*Invalid Email";
-    return false;
-  } else if (c == null || c == "") {
-    document.getElementById("label").textContent =
-      "*Password Must Be Filled Out";
-    return false;
-  } else if (d == null || d == "") {
-    document.getElementById("label").textContent =
-      "*Password Must Be Filled Out";
-    return false;
-  } else if (c != d) {
-    document.getElementById("label").textContent = "*Passwords Does Not Match";
-    return false;
-  } else if (a > 5) {
-    alert("hello");
-  } else {
-    let e = document.getElementById("label");
-    e.textContent = "Successfully Registered";
-    e.classList.remove("red");
-    e.style.color = "green";
-  }
-};
+const Test = () => {};

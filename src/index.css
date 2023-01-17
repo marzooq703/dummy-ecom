@@ -8,6 +8,12 @@ body {
   font-family: open Sans, poppins, raleway;
 }
 
+.popFonts {
+  font-family: poppins !important;
+}
+
+/* navbar */
+
 .navbar-toggler-icon {
   background-image: url(../src/Images/nav-icon.png) !important;
 }
@@ -73,6 +79,10 @@ body {
   color: #fff;
 }
 
+/* End of Navbar Section */
+
+/* Home Section */
+
 .home {
   height: 89.6vh;
   display: flex;
@@ -126,7 +136,7 @@ body {
 .submit:hover {
   background-color: #006d77;
   transition: 0.2s ease;
-  color: #000;
+  color: #fff;
 }
 
 .shop-bttn:hover {
@@ -149,19 +159,63 @@ body {
   margin-left: auto;
 }
 
-.tabs {
-  width: 100% !important;
+/* End Of home */
+
+/* Pro Section */
+
+.pro {
   height: 100% !important;
-  font-size: 50px !important;
+}
+
+.pro-grid {
+  height: 100% !important;
+  width: 100vw !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 50px;
+  gap: 50px;
+  -webkit-flex-basis: 0% !important;
+  flex-basis: 0% !important;
+}
+
+/* .pro-box {
+  flex-basis: 0%;
+  -webkit-flex-basis: 20%;
+} */
+
+.pro-sizing {
+  width: 320px;
+  height: 350px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  position: relative;
-  top: 25px;
+  background-color: #fff !important;
+}
+
+.pro-img {
+  width: 230px;
+}
+
+/* End of Pro Sections */
+
+/* Form Section */
+
+.tabs {
+  width: 100% !important;
+  font-size: 50px !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  margin-top: 10px;
 }
 
 .form {
+  font-weight: 700 !important;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -195,9 +249,118 @@ body {
   color: red !important;
 }
 
+/* Login Component  */
+
 .login {
   height: 300px;
 }
+
+/* End of Form */
+
+/* Admin Panel */
+.logout {
+  margin-top: 20px;
+  background-color: red;
+}
+
+.adminLogin {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* End Of Admin */
+
+.cart {
+  height: 100vh;
+}
+
+/* Footer */
+.footer-distributed {
+  background-color: #292c2f;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  width: 100%;
+  text-align: left;
+  font: normal 16px sans-serif;
+  padding: 45px 50px;
+}
+
+.footer-distributed .footer-left p {
+  color: #8f9296;
+  font-size: 14px;
+  margin: 0;
+}
+
+/* Footer links */
+
+.footer-distributed p.footer-links {
+  font-size: 15px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 0 10px;
+  padding: 0;
+  transition: ease 0.25s;
+}
+
+.footer-distributed p.footer-links a {
+  display: inline-block;
+  line-height: 1.8;
+  text-decoration: none;
+  color: inherit;
+  transition: ease 0.25s;
+}
+
+/* .footer-distributed .footer-links a:before {
+  content: "·";
+  font-size: 20px;
+  left: 0;
+  color: #fff;
+  display: inline-block;
+  padding-right: 5px;
+}
+
+.footer-distributed .footer-links .link-1:before {
+  content: none;
+} */
+
+.footer-distributed .footer-right {
+  float: right;
+  margin-top: 6px;
+  max-width: 180px;
+}
+
+.footer-distributed .footer-right a {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  background-color: #33383b;
+  border-radius: 2px;
+  font-size: 20px;
+  color: #ffffff;
+  text-align: center;
+  line-height: 35px;
+  margin-left: 3px;
+  transition: all 0.25s;
+}
+
+.footer-distributed .footer-right a:hover {
+  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+}
+
+.footer-distributed p.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* @media screen and (min-width: 900px) {
+  .pro-box {
+    -webkit-flex-basis: 20%;
+    flex-basis: 0%;
+    font-size: 900px;
+  }
+} */
 
 @media screen and (max-width: 768px) {
   .logo {
@@ -214,7 +377,7 @@ body {
   #bgimg {
     width: 75% !important;
     position: relative;
-    top: 20%;
+    top: 30%;
     margin-right: auto;
   }
 
@@ -245,5 +408,28 @@ body {
 
   .form {
     width: 100%;
+  }
+
+  .admin {
+    width: 80%;
+    margin-top: -5px;
+  }
+
+  /* footer */
+
+  .footer-distributed {
+    margin-top: 100%;
+  }
+
+  .footer-distributed .footer-left,
+  .footer-distributed .footer-right {
+    text-align: center;
+  }
+  .footer-distributed .footer-right {
+    float: none;
+    margin: 0 auto 20px;
+  }
+  .footer-distributed .footer-left p.footer-links {
+    line-height: 1.8;
   }
 }

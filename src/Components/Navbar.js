@@ -37,8 +37,8 @@ function NavBarr() {
             <NavLink to="/form" className="link ">
               Register/Login
             </NavLink>
-            <NavLink to="/adminform" className="link">
-              Admin Login
+            <NavLink to="/584647" className="link ">
+              Admin
             </NavLink>
           </Nav>
         </Navbar.Collapse>
