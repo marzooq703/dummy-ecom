@@ -1,33 +1,52 @@
 import Register from "./Register";
 import Box from "@mui/material/Box";
 import { useState } from "react";
-import { collection, addDoc } from "firebase/firestore";
-import { db } from "../firebase_setup/firebase";
+import { collection, addDoc } from "firebase/compat/firestore";
+import db from "../firebase_setup/firebase";
 import "../index.css";
 import { useNavigate } from "react-router-dom";
 
 export default function AdminForm() {
-  const [todo, setTodo] = useState("");
-  const valueArr = [];
-  const addTodo = (e) => {
-    e.preventDefault();
-    console.log(valueArr);
-    valueArr.forEach((element, indexx) => {
-      try {
-        const docRef = addDoc(collection(db, "todos"), {
-          indexx: element,
-        });
-        console.log("Document written with ID: ", docRef.id);
-      } catch (e) {
-        console.error("Error adding document: ", e);
-      }
-    });
-  };
+  // const [todo, setTodo] = useState("");
+  // const valueArr = [];
+  // const addTodo = (e) => {
+  //   e.preventDefault();
+  //   console.log(valueArr);
+  //   valueArr.forEach((element, indexx) => {
+  //     try {
+  //       const docRef = addDoc(collection(db, "todos"), {
+  //         indexx: element,
+  //       });
+  //       console.log("Document written with ID: ", docRef.id);
+  //     } catch (e) {
+  //       console.error("Error adding document: ", e);
+  //     }
+  //   });
+  // };
 
-  let navigate = useNavigate();
-  const logout = () => {
-    let path = `/`;
-    navigate(path);
+  // let navigate = useNavigate();
+  // const logout = () => {
+  //   let path = `/`;
+  //   navigate(path);
+  // };
+  const [productTitle, setProductTitle] = useState("");
+  const [productDescription, setProductDescription] = useState("");
+  const [productQuantity, setProductQuantity] = useState("");
+  const [productPrice, setProductPrice] = useState("");
+
+  const addProduct = (e) => {
+    e.preventDefault();
+    db.collection("customersData").add({
+      Title: productTitle,
+      Description: productDescription,
+      Quantity: productQuantity,
+      Price: productPrice,
+    });
+
+    // setProductTitle("");
+    // setProductDescription("");
+    // setProductQuantity("");
+    // setProductPrice("");
   };
 
   return (
@@ -40,12 +59,12 @@ export default function AdminForm() {
         field3Type="number"
         field4Type="number"
         BtnText="Add"
-        onChange={(e) => valueArr.push(e.target.value)}
-        BtnClick={addTodo}
+        onChangeName={(e) => setProductTitle(e.target.value)}
+        onChangeEmail={(e) => setProductDescription(e.target.value)}
+        onChangePass={(e) => setProductQuantity(e.target.value)}
+        onChangeConfirmPass={(e) => setProductPrice(e.target.value)}
+        BtnClick={addProduct}
       />
-      <button type="submit" onClick={logout} className="submit logout">
-        Logout
-      </button>
     </Box>
   );
 }
