@@ -9,6 +9,7 @@ import Form from "./pages/Form";
 import "bootstrap/dist/css/bootstrap.min.css";
 import AdminForm from "./Components/Admin";
 import AdminTest from "./Components/AdminTest";
+import Display from "./Components/Display";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/" element={<SharedLayout />}>
           <Route index element={<Home />} />
           <Route path="products" element={<Products />} />
+          <Route path="products/:productid" element={<Display />} />
           <Route path="cart" element={<Cart />} />
           <Route path="form" element={<Form />} />
           <Route path="123" element={<AdminForm />} />
