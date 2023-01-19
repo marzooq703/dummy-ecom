@@ -28,16 +28,36 @@ function NavBarr() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" className="hide">
           <Nav className="me-auto">
-            <NavLink to="/" className="link ">
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                isActive ? "link active " : "link "
+              }
+            >
               Home
             </NavLink>
-            <NavLink to="/products" className="link ">
+            <NavLink
+              to="/products"
+              className={({ isActive }) =>
+                isActive ? "link active " : "link "
+              }
+            >
               Products
             </NavLink>
-            <NavLink to="/form" className="link ">
+            <NavLink
+              to="/form"
+              className={({ isActive }) =>
+                isActive ? "link active " : "link "
+              }
+            >
               Register/Login
             </NavLink>
-            <NavLink to="/584647" className="link ">
+            <NavLink
+              to="/584647"
+              className={({ isActive }) =>
+                isActive ? "link active " : "link "
+              }
+            >
               Admin
             </NavLink>
           </Nav>
