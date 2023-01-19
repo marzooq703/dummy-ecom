@@ -63,36 +63,6 @@ const products = [
     price: "28,999",
     image2: "https://m.media-amazon.com/images/I/51-rpg9llBL._SL1500_.jpg",
   },
-  // {
-  //   id: "124",
-  //   name: "p2",
-  //   image: "https://m.media-amazon.com/images/I/71D9ImsvEtL._UY500_.jpg",
-  //   price: "$599",
-  // },
-  // {
-  //   id: "124",
-  //   name: "p2",
-  //   image: "https://m.media-amazon.com/images/I/71D9ImsvEtL._UY500_.jpg",
-  //   price: "$599",
-  // },
-  // {
-  //   id: "124",
-  //   name: "p2",
-  //   image: "https://m.media-amazon.com/images/I/71D9ImsvEtL._UY500_.jpg",
-  //   price: "$599",
-  // },
-  // {
-  //   id: "124",
-  //   name: "p2",
-  //   image: "https://m.media-amazon.com/images/I/71D9ImsvEtL._UY500_.jpg",
-  //   price: "599",
-  // },
-  // {
-  //   id: "124",
-  //   name: "p2",
-  //   image: "https://m.media-amazon.com/images/I/71D9ImsvEtL._UY500_.jpg",
-  //   price: "599",
-  // },
 ];
 
 export default products;
