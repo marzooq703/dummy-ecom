@@ -37,7 +37,7 @@ const Footer = () => {
               Products
             </NavLink>
             <NavLink to="/form" className="link ">
-              Register/Login
+              Register
             </NavLink>
             <NavLink to="/584647" className="link ">
               Admin

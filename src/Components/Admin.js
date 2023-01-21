@@ -4,7 +4,6 @@ import { useState } from "react";
 import { collection, addDoc } from "firebase/compat/firestore";
 import db from "../firebase_setup/firebase";
 import "../index.css";
-import { useNavigate } from "react-router-dom";
 
 export default function AdminForm() {
   // const [todo, setTodo] = useState("");

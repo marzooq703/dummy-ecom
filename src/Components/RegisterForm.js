@@ -26,7 +26,6 @@ const RegisterForm = () => {
   });
 
   const submitForm = () => {
-    // if (initialValues.name == "" || initialValues.name == null) alert("Hello");
     let a = document.querySelector("#name").value;
     let b = document.querySelector("#email").value;
     let c = document.querySelector("#pass").value;

@@ -10,8 +10,8 @@ export default function Products() {
         {products.map((product) => {
           return (
             <div>
-              <article key={product.id} className="pro-container">
-                <Link to={`/products/${product.id}`}>
+              <article key={product.keys} className="pro-container">
+                <Link to={`/products/${product.keys}`}>
                   <img src={product.image} className="pro-img" />
                 </Link>
                 <div className="pro-details">
@@ -26,3 +26,5 @@ export default function Products() {
     </div>
   );
 }
+// const { productid } = useParams();
+// const product = products.find((product) => product.id === productid);

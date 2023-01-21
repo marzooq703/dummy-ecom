@@ -6,7 +6,7 @@ import "../index.css";
 
 function NavBarr() {
   return (
-    <Navbar bg="dark" expand="lg" id="navbar">
+    <Navbar bg="dark" expand="lg" id="navbar" sticky="top">
       <Container>
         <NavLink to="/">
           <img
@@ -21,9 +21,7 @@ function NavBarr() {
             className="cart-icon"
             alt="cart"
           />
-          <span>
-            Cart <span className="cart-item">0</span>
-          </span>
+          <span>Cart</span>
         </NavLink>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" className="hide">

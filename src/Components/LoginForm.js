@@ -15,6 +15,7 @@ const LoginForm = (props) => {
           id="email"
           type="email"
           className="name popFonts"
+          value={props.value1}
           onChange={props.onChangeEmail}
         />
       </FormControl>
@@ -26,6 +27,7 @@ const LoginForm = (props) => {
           id="pass"
           aria-describedby="my-helper-text"
           type="password"
+          value={props.value2}
           onChange={props.onChangePass}
           className="popFonts"
         />

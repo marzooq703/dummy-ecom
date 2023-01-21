@@ -8,70 +8,91 @@ function getLoginValues() {
   if (!storedValues)
     return {
       email: "",
-      password: "",
+    };
+  return JSON.parse(storedValues);
+}
+function getLoginValue() {
+  const storedValues = localStorage.getItem("Login1");
+  if (!storedValues)
+    return {
+      pass: "",
     };
   return JSON.parse(storedValues);
 }
 
-const Login = () => {
-  let navigate = useNavigate();
+const storedValues = localStorage.getItem("Login");
 
-  //persisting form values
-  const [initialValues, setInitialValues] = useState(getLoginValues);
-  const [formValues, setFormValues] = useState([]);
+const Login = ({ setUser }) => {
+  const [email, setEmail] = useState();
+  const [pass, setPass] = useState();
+  const navigate = useNavigate();
+
+  const a = "mahyan@gmail.com";
+  const b = "12345";
+  const validRegex =
+    /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+  // //persisting form values
+  // const [initialValues, setInitialValues] = useState(getLoginValues);
+  // const [formValues, setFormValues] = useState([]);
 
   useEffect(() => {
-    localStorage.setItem("Login", JSON.stringify(initialValues), [formValues]);
+    localStorage.setItem("Login", JSON.stringify(email), [email]);
+  });
+  useEffect(() => {
+    localStorage.setItem("Login1", JSON.stringify(pass), [pass]);
   });
 
-  console.log(initialValues);
+  // console.log(initialValues);
 
-  const submitForm = () => {
-    let a = document.querySelector("#email").value;
-    let b = document.querySelector("#pass").value;
-
-    const validRegex =
-      /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-
-    const c = "mahyan@gmail.com";
-    const d = "12345";
-
+  const submitForm = async (e) => {
+    e.preventDefault();
+    setUser({ email: email, pass: pass });
     //Props can be used to add items in product using admin
-
-    if (a == null || a == "") {
+    if (email == null || email == "") {
       document.getElementById("label").textContent =
         "*Email Must Be Filled Out";
       return false;
-    } else if (b == null || b == "") {
+    } else if (pass == null || pass == "") {
       document.getElementById("label").textContent =
         "*Password Must Be Filled Out";
       return false;
-    } else if (!a.match(validRegex)) {
+    } else if (!email.match(validRegex)) {
       document.getElementById("label").textContent = "*Invalid Email";
       return false;
     }
-    if (a == c && b == d) {
-      let path = `/123`;
-      navigate(path);
+    // setFormValues((prevFormValues) => [...prevFormValues, initialValues]);
+
+    if (email == a && pass == b) {
+      navigate("/123");
     } else {
       document.getElementById("label").textContent =
         "*Incorrect Login Credentials";
     }
-    setFormValues((prevFormValues) => [...prevFormValues, initialValues]);
   };
 
   return (
-    <LoginForm
-      email="Enter Email Address"
-      onChangeEmail={(e) =>
-        setInitialValues({ ...initialValues, email: e.target.value })
-      }
-      password="Enter Password"
-      onChangePass={(e) =>
-        setInitialValues({ ...initialValues, password: e.target.value })
-      }
-      onsubmit={submitForm}
-    />
+    <div className="adminLogin">
+      <h1>Please Login</h1>
+      <LoginForm
+        email="Enter Email Address"
+        value1={email}
+        // onChangeEmail={(e) =>
+        //   setInitialValues({ ...initialValues, email: e.target.value })
+        // }
+        onChangeEmail={(e) => {
+          setEmail(e.target.value);
+        }}
+        password="Enter Password"
+        value2={pass}
+        onChangePass={(e) => {
+          setPass(e.target.value);
+        }}
+        // onChangePass={(e) =>
+        //   setInitialValues({ ...initialValues, password: e.target.value })
+        // }
+        onsubmit={submitForm}
+      />
+    </div>
   );
 };
 
