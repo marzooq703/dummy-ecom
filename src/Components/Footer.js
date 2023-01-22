@@ -14,7 +14,7 @@ const Footer = () => {
     <div className="footer">
       <footer className="footer-distributed">
         <div className="footer-right">
-          <a href="#">
+          <a href="#/">
             <FontAwesomeIcon icon={faInstagram} />
           </a>
           <a href="#">

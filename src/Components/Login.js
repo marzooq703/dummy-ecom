@@ -3,24 +3,24 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import LoginForm from "./LoginForm";
 
-function getLoginValues() {
-  const storedValues = localStorage.getItem("Login");
-  if (!storedValues)
-    return {
-      email: "",
-    };
-  return JSON.parse(storedValues);
-}
-function getLoginValue() {
-  const storedValues = localStorage.getItem("Login1");
-  if (!storedValues)
-    return {
-      pass: "",
-    };
-  return JSON.parse(storedValues);
-}
+// function getLoginValues() {
+//   const storedValues = localStorage.getItem("Login");
+//   if (!storedValues)
+//     return {
+//       email: "",
+//     };
+//   return JSON.parse(storedValues);
+// }
+// function getLoginValue() {
+//   const storedValues = localStorage.getItem("Login1");
+//   if (!storedValues)
+//     return {
+//       pass: "",
+//     };
+//   return JSON.parse(storedValues);
+// }
 
-const storedValues = localStorage.getItem("Login");
+// const storedValues = localStorage.getItem("Login");
 
 const Login = ({ setUser }) => {
   const [email, setEmail] = useState();

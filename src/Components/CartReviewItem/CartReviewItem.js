@@ -1,12 +1,12 @@
 import React from "react";
-import { Button, Card } from "react-bootstrap";
+// import { Button, Card } from "react-bootstrap";
 import "./CartReviewItem.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faCoffee,
-  faShoppingCart,
-  faTimes,
-} from "@fortawesome/free-solid-svg-icons";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import {
+//   faCoffee,
+//   faShoppingCart,
+//   faTimes,
+// } from "@fortawesome/free-solid-svg-icons";
 const CartReviewItem = (props) => {
   const { name, quantity, keys, image, price } = props.foodsToReview;
   return (
@@ -19,7 +19,7 @@ const CartReviewItem = (props) => {
           <h5>{name}</h5>
           <h5>Quantity : {quantity}</h5>
           <h5>Price : {price}</h5>
-          <a onClick={() => props.removeItem(keys)} href="#">
+          <a onClick={() => props.removeItem(keys)} href="#/">
             <input type="button" value="REMOVE" className="remove-btn" />
           </a>
         </div>
