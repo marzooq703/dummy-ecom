@@ -17,10 +17,6 @@ const DisplayProducts = () => {
 
   console.log(findProductDetails);
 
-  /**
-   * {findFood} finds data accord to {title} route param from demoData or database demo
-   * !!Needs to improve!!
-   */
   useEffect(() => {
     //useEffect here to load data from local storage
     const getSavedDataFromLS = getDatabaseCart();
