@@ -38,12 +38,12 @@ const CartHidden = (props) => {
             Item Ordered: <span>{cart.length}</span>
           </p>
           <p className="bill-item bill-font">
-            Total:
-            <span>&#x20b9;{grandTotal}</span>
-          </p>
-          <p className="bill-item bill-font">
             Delivery charge:
             <span>&#x20b9;{delivery}</span>
+          </p>
+          <p className="bill-item bill-font">
+            Total:
+            <span>&#x20b9;{grandTotal}</span>
           </p>
           <input type="submit" className="bttn cart-btn1" value="PAYMENT" />
           <small className="cart-free">
