@@ -3,7 +3,6 @@ import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Products from "./pages/Products";
-import Cart from "./pages/Cart";
 import Error from "./pages/Error";
 import SharedLayout from "./pages/SharedLayout";
 import Form from "./pages/Form";
@@ -13,12 +12,7 @@ import Login from "./Components/Login";
 import CartReview from "./Components/CartReview/CartReview";
 import ProtectedRoute from "./Components/ProtectedRoute";
 import DisplayProducts from "./Components/DisplayProducts";
-// import { toast } from "react-toastify";
 
-// toast.configure({
-//   autoClose: 1000,
-//   draggable: false,
-// });
 function App() {
   const [user, setUser] = useState(null);
 

@@ -1,12 +1,6 @@
 import React from "react";
-import { Button, Card } from "react-bootstrap";
 import "./CartReviewItem.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faCoffee,
-  faShoppingCart,
-  faTimes,
-} from "@fortawesome/free-solid-svg-icons";
+
 const CartReviewItem = (props) => {
   const { name, quantity, keys, image, price } = props.foodsToReview;
   return (

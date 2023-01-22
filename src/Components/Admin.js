@@ -5,6 +5,8 @@ import { collection, addDoc } from "firebase/compat/firestore";
 import db from "../firebase_setup/firebase";
 import "../index.css";
 
+import FirestoreFetch from "../FirstoreFetch";
+
 export default function AdminForm() {
   // const [todo, setTodo] = useState("");
   // const valueArr = [];
@@ -36,10 +38,10 @@ export default function AdminForm() {
   const addProduct = (e) => {
     e.preventDefault();
     db.collection("customersData").add({
-      Title: productTitle,
+      name: productTitle,
       Description: productDescription,
       Quantity: productQuantity,
-      Price: productPrice,
+      price: productPrice,
     });
 
     // setProductTitle("");
@@ -49,21 +51,25 @@ export default function AdminForm() {
   };
 
   return (
-    <Box sx={{ width: "15%" }} className="tabs">
-      <Register
-        field1="Enter Product Title"
-        field2="Enter description"
-        field3="Enter Quantity"
-        field4="Enter Price"
-        field3Type="number"
-        field4Type="number"
-        BtnText="Add"
-        onChangeName={(e) => setProductTitle(e.target.value)}
-        onChangeEmail={(e) => setProductDescription(e.target.value)}
-        onChangePass={(e) => setProductQuantity(e.target.value)}
-        onChangeConfirmPass={(e) => setProductPrice(e.target.value)}
-        BtnClick={addProduct}
-      />
-    </Box>
+    <>
+      <Box sx={{ width: "15%" }} className="tabs">
+        <Register
+          field1="Enter Product Title"
+          field2="Enter description"
+          field3="Enter Quantity"
+          field5="Enter Quantity"
+          field4="Enter Price"
+          field3Type="number"
+          field4Type="number"
+          BtnText="Add"
+          onChangeName={(e) => setProductTitle(e.target.value)}
+          onChangeEmail={(e) => setProductDescription(e.target.value)}
+          onChangePass={(e) => setProductQuantity(e.target.value)}
+          onChangeConfirmPass={(e) => setProductPrice(e.target.value)}
+          BtnClick={addProduct}
+        />
+        <FirestoreFetch />
+      </Box>
+    </>
   );
 }
