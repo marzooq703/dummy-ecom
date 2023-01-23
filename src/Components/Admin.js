@@ -36,18 +36,16 @@ export default function AdminForm() {
   const allInputs = { imgUrl: "" };
   const [imageAsFile, setImageAsFile] = useState("");
   const [imageAsUrl, setImageAsUrl] = useState("");
-  
   //ProductdetailsState
   const [productTitle, setProductTitle] = useState("");
   const [productDescription, setProductDescription] = useState("");
   const [productQuantity, setProductQuantity] = useState("");
   const [productPrice, setProductPrice] = useState("");
 
-
   //ImageHandler
   const handleImageAsFile = (e) => {
     const image = e.target.files[0];
-    setImageAsFile((imageFile) => image);
+    setImageAsFile(image);
   };
   //Uploader
   const addProduct = (e) => {
