@@ -8,6 +8,8 @@ import { ref, uploadBytes } from "@firebase/storage";
 
 import "../index.css";
 
+import FirestoreFetch from "../FirstoreFetch";
+
 export default function AdminForm() {
   // const [todo, setTodo] = useState("");
   // const valueArr = [];
@@ -32,12 +34,21 @@ export default function AdminForm() {
   //   navigate(path);
   // };
 
+
   const [image, setImage] = useState("");
   const [Url, setUrl] = useState("");
 
   const upload = () => {
     if (image == null) return;
     setUrl("Getting Download Link...");
+  const addProduct = (e) => {
+    e.preventDefault();
+    db.collection("customersData").add({
+      name: productTitle,
+      Description: productDescription,
+      Quantity: productQuantity,
+      price: productPrice,
+    });
 
     // Sending File to Firebase Storage
     storage

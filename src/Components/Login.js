@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import LoginForm from "./LoginForm";
 
+
 // function getLoginValues() {
 //   const storedValues = localStorage.getItem("Login");
 //   if (!storedValues)
@@ -22,24 +23,40 @@ import LoginForm from "./LoginForm";
 
 // const storedValues = localStorage.getItem("Login");
 
+
+function getLoginValues() {
+  const storedValues = localStorage.getItem("Email");
+  if (!storedValues)
+    return {
+      email: "",
+    };
+  return JSON.parse(storedValues);
+}
+function getLoginValue() {
+  const storedValues = localStorage.getItem("Pass");
+  if (!storedValues)
+    return {
+      pass: "",
+    };
+  return JSON.parse(storedValues);
+}
+
+
 const Login = ({ setUser }) => {
-  const [email, setEmail] = useState();
-  const [pass, setPass] = useState();
+  const [email, setEmail] = useState(getLoginValues);
+  const [pass, setPass] = useState(getLoginValue);
   const navigate = useNavigate();
 
   const a = "mahyan@gmail.com";
   const b = "12345";
   const validRegex =
     /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-  // //persisting form values
-  // const [initialValues, setInitialValues] = useState(getLoginValues);
-  // const [formValues, setFormValues] = useState([]);
 
   useEffect(() => {
-    localStorage.setItem("Login", JSON.stringify(email), [email]);
+    localStorage.setItem("Email", JSON.stringify(email), [email]);
   });
   useEffect(() => {
-    localStorage.setItem("Login1", JSON.stringify(pass), [pass]);
+    localStorage.setItem("Pass", JSON.stringify(pass), [pass]);
   });
 
   // console.log(initialValues);
@@ -72,7 +89,6 @@ const Login = ({ setUser }) => {
 
   return (
     <div className="adminLogin">
-      <h1>Please Login</h1>
       <LoginForm
         email="Enter Email Address"
         value1={email}

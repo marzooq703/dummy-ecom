@@ -1,12 +1,6 @@
 import React from "react";
 import NavBarr from "../Navbar";
 
-/**
- *
- * CartHidden to calculate product price and others
- * For now need to hidden
- * !!Needs to improve!!
- */
 const CartHidden = (props) => {
   const cart = props.cart;
   let delivery = 0;
