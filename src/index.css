@@ -197,7 +197,7 @@ body {
 }
 
 .pro-container {
-  width: 320px;
+  width: 300px;
   height: 400px;
   display: flex;
   flex-direction: column;
@@ -223,6 +223,22 @@ body {
 .pro-price {
   font-size: 24px;
   font-weight: 500;
+}
+
+.pro-price-flex {
+  display: flex;
+  align-items: center;
+}
+
+.pro-rating {
+  position: relative;
+  display: flex;
+  align-items: center;
+  left: 50%;
+}
+
+.pro-star {
+  width: 8%;
 }
 
 .display-pro {

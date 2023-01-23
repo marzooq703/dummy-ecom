@@ -5,8 +5,8 @@ import { collection, addDoc } from "firebase/firestore";
 import { storage } from "../firebase_setup/firebase";
 import db from "../firebase_setup/firebase";
 import { ref, uploadBytes } from "@firebase/storage";
-
 import "../index.css";
+import FirestoreFetch from "../FirstoreFetch";
 
 export default function AdminForm() {
   // const [todo, setTodo] = useState("");
@@ -36,11 +36,13 @@ export default function AdminForm() {
   const allInputs = { imgUrl: "" };
   const [imageAsFile, setImageAsFile] = useState("");
   const [imageAsUrl, setImageAsUrl] = useState("");
+  
   //ProductdetailsState
   const [productTitle, setProductTitle] = useState("");
   const [productDescription, setProductDescription] = useState("");
   const [productQuantity, setProductQuantity] = useState("");
   const [productPrice, setProductPrice] = useState("");
+
 
   //ImageHandler
   const handleImageAsFile = (e) => {

@@ -7,7 +7,6 @@ import {
   addToDatabaseCart,
   getDatabaseCart,
 } from "../utilities/databaseManager";
-import Alert from "react-bootstrap/Alert";
 
 const DisplayProducts = () => {
   const { keys } = useParams();
@@ -18,11 +17,8 @@ const DisplayProducts = () => {
   console.log(findProductDetails);
 
   useEffect(() => {
-    //useEffect here to load data from local storage
     const getSavedDataFromLS = getDatabaseCart();
     const itemKeys = Object.keys(getSavedDataFromLS);
-    //retrive ls data key and match with demoData key
-    //find all matches and get data
     const cartProducts = itemKeys.map((key) => {
       const product = products.find((fd) => fd.keys === key);
       // console.log(product)
