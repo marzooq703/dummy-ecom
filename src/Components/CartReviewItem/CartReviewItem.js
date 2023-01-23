@@ -1,5 +1,6 @@
 import React from "react";
 import "./CartReviewItem.css";
+import "./CartReviewItem.css";
 
 const CartReviewItem = (props) => {
   const { name, quantity, keys, image, price } = props.foodsToReview;
@@ -13,7 +14,7 @@ const CartReviewItem = (props) => {
           <h5>{name}</h5>
           <h5>Quantity : {quantity}</h5>
           <h5>Price : {price}</h5>
-          <a onClick={() => props.removeItem(keys)} href="#">
+          <a onClick={() => props.removeItem(keys)} href="#/">
             <input type="button" value="REMOVE" className="remove-btn" />
           </a>
         </div>

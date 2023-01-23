@@ -3,6 +3,27 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import LoginForm from "./LoginForm";
 
+
+// function getLoginValues() {
+//   const storedValues = localStorage.getItem("Login");
+//   if (!storedValues)
+//     return {
+//       email: "",
+//     };
+//   return JSON.parse(storedValues);
+// }
+// function getLoginValue() {
+//   const storedValues = localStorage.getItem("Login1");
+//   if (!storedValues)
+//     return {
+//       pass: "",
+//     };
+//   return JSON.parse(storedValues);
+// }
+
+// const storedValues = localStorage.getItem("Login");
+
+
 function getLoginValues() {
   const storedValues = localStorage.getItem("Email");
   if (!storedValues)
@@ -19,6 +40,7 @@ function getLoginValue() {
     };
   return JSON.parse(storedValues);
 }
+
 
 const Login = ({ setUser }) => {
   const [email, setEmail] = useState(getLoginValues);
