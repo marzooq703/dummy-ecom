@@ -3,27 +3,6 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import LoginForm from "./LoginForm";
 
-
-// function getLoginValues() {
-//   const storedValues = localStorage.getItem("Login");
-//   if (!storedValues)
-//     return {
-//       email: "",
-//     };
-//   return JSON.parse(storedValues);
-// }
-// function getLoginValue() {
-//   const storedValues = localStorage.getItem("Login1");
-//   if (!storedValues)
-//     return {
-//       pass: "",
-//     };
-//   return JSON.parse(storedValues);
-// }
-
-// const storedValues = localStorage.getItem("Login");
-
-
 function getLoginValues() {
   const storedValues = localStorage.getItem("Email");
   if (!storedValues)
@@ -41,10 +20,9 @@ function getLoginValue() {
   return JSON.parse(storedValues);
 }
 
-
 const Login = ({ setUser }) => {
-  const [email, setEmail] = useState(getLoginValues);
-  const [pass, setPass] = useState(getLoginValue);
+  const [email, setEmail] = useState();
+  const [pass, setPass] = useState();
   const navigate = useNavigate();
 
   const a = "mahyan@gmail.com";
@@ -64,7 +42,6 @@ const Login = ({ setUser }) => {
   const submitForm = async (e) => {
     e.preventDefault();
     setUser({ email: email, pass: pass });
-    //Props can be used to add items in product using admin
     if (email == null || email == "") {
       document.getElementById("label").textContent =
         "*Email Must Be Filled Out";

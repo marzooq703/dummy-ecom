@@ -23,18 +23,17 @@ function FirestoreFetch() {
         }
       });
   };
+  const product = [];
+  allDocs.map((doc) => {
+    product = [
+      {
+        name: doc.name,
+        price: doc.price,
+      },
+    ];
 
-  {
-    allDocs.map((doc) => {
-      const product = [
-        {
-          name: doc.name,
-          price: doc.price,
-        },
-      ];
-      console.log(product);
-    });
-  }
+    console.log(product);
+  });
 
   return (
     <>
@@ -54,4 +53,4 @@ function FirestoreFetch() {
   );
 }
 
-export default FirestoreFetch;
+export { FirestoreFetch as default };

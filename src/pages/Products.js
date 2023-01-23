@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
 import products from "../Components/data";
+import star from "../Images/star.png";
 
 export default function Products() {
   return (
@@ -16,7 +17,13 @@ export default function Products() {
                 </Link>
                 <div className="pro-details">
                   <h4 className="pro-name">{product.name}</h4>
-                  <h3 className="pro-price">&#x20b9;{product.price}</h3>
+                  <div className="pro-price-flex">
+                    <h3 className="pro-price">&#x20b9;{product.price}</h3>
+                    <div className="pro-rating">
+                      <img src={star} className="pro-star" />
+                      <span>{product.rating}/5</span>
+                    </div>
+                  </div>
                 </div>
               </article>
             </div>
