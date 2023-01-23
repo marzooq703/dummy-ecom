@@ -4,8 +4,6 @@ import firebase from "firebase/compat/app";
 function FirestoreFetch() {
   const [allDocs, setAllDocs] = useState([]);
 
-  let i;
-
   const db = firebase.firestore();
 
   const fetchall = (e) => {

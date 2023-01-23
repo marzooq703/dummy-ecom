@@ -7,7 +7,7 @@ const Home = () => {
       <section className="home">
         <div className="hero">
           <p className="hero-t1">Just Dropped</p>
-          <p className="hero-t2">Feel Aunthentic Peace</p>
+          <p className="hero-t2">Feel Authentic Piece</p>
           <div className="bttn">
             <Link to="products" className="shop-bttn">
               Shop Now
